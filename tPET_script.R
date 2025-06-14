@@ -4,8 +4,8 @@ library(tidyverse)
 library(writexl)
 
 # Import data -------------------------------------------------------------
-stub <- read_csv("/Volumes/fsmresfiles/CNADC/Imaging_Core/Imaging/imaging_projects/Individuals/Joshua_Pasaye/R scripts/Tau_PET/ImagingCoreDatabase-Stub_DATA_2025-06-04_1233.csv")
-tau_metrics <- read_csv("/Volumes/fsmresfiles/CNADC/Imaging_Core/Imaging/imaging_projects/Individuals/Joshua_Pasaye/R scripts/Tau_PET/ImagingCoreDatabase-ICTauPETReads_DATA_2025-06-04_1233.csv")
+stub <- read_csv("ImagingCoreDatabase-Stub_DATA_2025-06-04_1233.csv")
+tau_metrics <- read_csv("ImagingCoreDatabase-ICTauPETReads_DATA_2025-06-04_1233.csv")
 
 stub <- stub %>%
   select(global_id, ptid, case_num_tau_pet) %>%
@@ -116,7 +116,7 @@ static_final <- static_info_merged %>%
   arrange(ptid)
 
 # Write to CSV
-write.csv(static_final, "/Volumes/fsmresfiles/CNADC/Imaging_Core/Imaging/imaging_projects/Individuals/Joshua_Pasaye/R scripts/Tau_PET/all_tau_statics.csv", row.names = FALSE)
+write.csv(static_final, "all_tau_statics.csv", row.names = FALSE)
 
 # Create new directories for data -----------------------------------------
 data_dir <- "/Volumes/fsmresfiles/CNADC/Imaging_Core/Imaging/imaging_projects/Individuals/Joshua_Pasaye/R scripts/Tau_PET/data"
